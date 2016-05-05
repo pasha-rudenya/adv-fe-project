@@ -1,0 +1,8 @@
+{
+  "name": "lesson01",
+  "homepage": "https://github.com/pasha-rudenya/adv-fe-project.git",
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "handlebars": "^4.0.5"
+  }
+}
