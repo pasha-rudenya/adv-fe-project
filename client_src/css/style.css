@@ -7,6 +7,23 @@ a {
     color: #127287;
 }
 
+.logo, .email {
+    display: inline-block;
+}
+
+.email {
+    float: right;
+}
+
+.logo__span {
+    font-size: large;
+    font-weight: bold;
+}
+
+.email__span {
+    color: #CCCCCC;
+}
+
 .layout {
     font-family: Verdana, sans-serif;
     font-size: 14px;

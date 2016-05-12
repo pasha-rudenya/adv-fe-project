@@ -7,57 +7,105 @@
 </head>
 <body>
     <div class="layout">
-        <header>
+        <header class="header-layout">
             <div class="logo">
-                <span class="logo__span">LOGO</span>>
+                <span class="logo__span">LOGO</span>
             </div>
             <div class="email">
-                <span class="email__span">user@email.com</span>>
+                <span class="email__span">user@email</span>
             </div>
         </header>
         <main>
-            <section>
+            <section class="content">
                 <article>
+                    <div class="post__container">
 
-                    <div class="post">
-                        <div class="post__img-wrapper">
-                            <img class="post__img" src="" />
-                        </div>>
-
-                        <div class="post__description">
-                            <div class="post__description__author">
-
-                            </div>
-                            <div class="post__description__desc">
-
-                            </div>
-                            <div class="post__description__tags">
-
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="comment">
-                        <div class="comment__author">
+                    <div class="comment__container">
 
-                        </div>
-                        <div class="comment__text">
-
-                        </div>
                     </div>
-
                 </article>
 
-                    <div class="post-preview">
-                        <div class="post-preview__island">
-                            <div class="post-preview__img-wrapper">
-                                <img class="post-preview__img" src="{{imgUrl}}" />
-                            </div>
-                            <div class="post-preview__description">description</div>
-                        </div>
-                    </div>
+                <div class="posts-related__container">
+
+                </div>
             </section>
         </main>
     </div>
+
+    <script type="text/x-handlebars-template" id="post-template">
+        <div class="post">
+            <div class="post__img-wrapper">
+                <img class="post__img" src="{{post.imgUrl}}" />
+            </div>
+
+            <div class="post__description">
+                <div class="post__description__author">
+                    Ivan Ivanov
+                </div>
+                <div class="post__description__desc">
+                    {{post.description}}
+                </div>
+                <div class="post__description__tags">
+                    <a href="">tag1</a>
+                    <a href="">tag2</a>
+                    <a href="">tag3</a>
+                </div>
+            </div>
+
+            <div class="comments__container">
+                <div class="comment-regular__container">
+
+                </div>
+
+                <div class="comment-answered__container">
+
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/x-handlebars-template" id="comment-regular">
+        {{> comment-view commentClass="comment-regular"}}
+    </script>
+
+    <script type="text/x-handlebars-template" id="comments-answered">
+        {{> comment-view commentClass="comment-answered"}}
+    </script>
+
+    <script type="text/x-handlebars-template" id="comment-template">
+        <div class="comment">
+            <div class="comment__author">
+                {{comment.username}}
+            </div>
+            <div class="comment__text">
+                {{comment.text}}
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="posts-related-list">
+        <div class="posts-related-list">
+            {{#each posts}}
+                {{> post-related postClass="posts-related-list__post"}}
+            {{/each}}
+        </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="post-related-template">
+        <div class="post-preview {{postClass}}">
+            <div class="post-preview__island">
+                <div class="post-preview__img-wrapper">
+                    <img class="post-preview__img" src="{{imgUrl}}" />
+                </div>
+                <div class="post-preview__description">{{description}}</div>
+            </div>
+        </div>
+    </script>
+
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/handlebars/handlebars.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/post.js"></script>
 </body>
 </html>
