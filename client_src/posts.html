@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><title>ADV_FE APP | Lesson1 | Stage 1</title></title>
+  <title>ADV_FE APP | Lesson1 | Stage 1</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -47,13 +47,13 @@
     <script type="text/x-handlebars-template" id="posts-list-template">
       <div class="posts-list">
         {{#each posts}}
-          {{> post-preview postClass="posts-list__post"}}
+          {{> post-preview postClass="posts-list__post" data-id="{{id}}" }}
         {{/each}}
       </div>
     </script>
 
     <script type="text/x-handlebars-template" id="post-preview-template">
-      <div class="post-preview {{postClass}}">
+      <div class="post-preview {{postClass}}" data-id="{{id}}">
         <div class="post-preview__island">
           <div class="post-preview__img-wrapper">
             <img class="post-preview__img" src="{{imgUrl}}" />

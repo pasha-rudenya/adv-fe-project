@@ -12,6 +12,7 @@ $( document ).ready( function () {
   var navigationTemplate = Handlebars.compile(navigationTemplateRaw);
 
   Handlebars.registerPartial('post-preview', postTemplateRaw);
+
   Handlebars.registerHelper('bold', function (options) {
     return new Handlebars.SafeString('<b>' +
         Handlebars.Utils.escapeExpression(options.hash.text) + '</b>'
@@ -69,4 +70,10 @@ $( document ).ready( function () {
 
     jQuery('.posts-container__list').html(html);
   }
+
+  $('.post-preview').click(function() {
+    var id = $(this).data('id');
+    var currentUrl = 'post.html?id=' + id;
+    window.open(currentUrl, '_self');
+  });
 });

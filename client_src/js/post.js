@@ -28,7 +28,7 @@ $( document ).ready( function () {
 
     function renderPost() {
         var html = postTemplate({
-           post: Data.getPost()
+           post: Data.getPost(parameter)
         });
 
         jQuery('.post__container').html(html);
@@ -45,7 +45,6 @@ $( document ).ready( function () {
     }
 
     function renderRegularComment() {
-        console.log(Data.getPostComments()[0]);
         var html = commentRegularTemplate({
            comment: Data.getPostComments()[0]
         });
